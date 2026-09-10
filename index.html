@@ -1,0 +1,1454 @@
+﻿﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarCare Point | Auto Service & Vehicle Care Karachi</title>
+    <meta name="description" content="CarCare Point provides professional vehicle service, maintenance, and automotive care in Karachi, Pakistan.">
+    <meta name="keywords" content="CarCare Point, Car Workshop Karachi, Auto Service Karachi, Vehicle Maintenance Karachi, Car Repair Karachi">
+    
+    <meta property="og:title" content="CarCare Point | Auto Service & Vehicle Care Karachi">
+    <meta property="og:description" content="Reliable vehicle service built around your drive. Professional maintenance in Karachi, Pakistan.">
+    <meta property="og:type" content="website">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* CSS VARIABLES & RESET */
+        :root {
+            --bg-black: #0d1211;
+            --bg-dark: #141b1a;
+            --bg-card: rgba(24, 33, 32, 0.72);
+            --border-color: rgba(255, 255, 255, 0.07);
+            --red-primary: #0f9b8e;
+            --red-bright: #2fd4bf;
+            --red-glow: rgba(47, 212, 191, 0.22);
+            --text-main: #f4f8f7;
+            --text-muted: #9aa9a6;
+            --text-dim: #6b7a77;
+            --silver: #c7d3d1;
+            --font-head: 'Space Grotesk', 'Segoe UI', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-black);
+            color: var(--text-main);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-head);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #fff;
+        }
+
+        a { text-decoration: none; color: inherit; transition: var(--transition); }
+        button { cursor: pointer; border: none; background: none; font-family: inherit; }
+        img { max-width: 100%; height: auto; display: block; }
+
+        /* UTILITY CLASSES */
+        .container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        section { padding: 100px 0; position: relative; }
+        
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px auto;
+        }
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-top: 10px;
+        }
+        .section-header p {
+            color: var(--text-muted);
+            margin-top: 12px;
+            font-size: 1.05rem;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px;
+            border-radius: 4px;
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            color: var(--red-bright);
+            font-family: var(--font-head);
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 32px;
+            border-radius: 4px;
+            font-family: var(--font-head);
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--red-primary), var(--red-bright));
+            color: #fff;
+            box-shadow: 0 4px 20px var(--red-glow);
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(239, 68, 68, 0.4);
+        }
+        .btn-outline {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            color: #fff;
+        }
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .glass-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+        .glass-card:hover {
+            border-color: rgba(239, 68, 68, 0.4);
+        }
+
+        /* NAVBAR */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: var(--transition);
+            padding: 20px 0;
+            background: rgba(11, 13, 16, 0.8);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-color);
+        }
+        .navbar.scrolled {
+            padding: 14px 0;
+            background: rgba(11, 13, 16, 0.95);
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-family: var(--font-head);
+            font-weight: 700;
+            font-size: 1.35rem;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .logo span { color: var(--red-bright); }
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+        .nav-links a {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-family: var(--font-head);
+        }
+        .nav-links a:hover, .nav-links a.active { color: #fff; }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        .hamburger span {
+            width: 28px;
+            height: 2px;
+            background-color: #fff;
+            transition: var(--transition);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            padding-top: 180px;
+            padding-bottom: 120px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin: 20px 0;
+            line-height: 1.1;
+        }
+        .hero-content p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 32px;
+        }
+        .hero-cta {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+        .hero-meta {
+            padding-top: 24px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        .hero-meta strong { color: #fff; }
+        .hero-image-wrapper {
+            position: relative;
+        }
+        .hero-img {
+            width: 100%;
+            height: 480px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+        .floating-badge {
+            position: absolute;
+            background: rgba(18, 22, 31, 0.9);
+            border: 1px solid var(--border-color);
+            padding: 12px 20px;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+            font-family: var(--font-head);
+            font-size: 0.85rem;
+            font-weight: 700;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .fb-1 { top: -20px; left: -20px; color: var(--red-bright); }
+        .fb-2 { bottom: -20px; right: -20px; color: #fff; }
+
+        /* ABOUT SECTION */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .about-text p {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+        .about-bullets {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 28px;
+        }
+        .bullet-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+            color: #fff;
+        }
+        .bullet-item span { color: var(--red-bright); }
+
+        /* SERVICES SECTION */
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+        .filter-btn {
+            padding: 10px 20px;
+            border-radius: 4px;
+            border: 1px solid var(--border-color);
+            background: rgba(255,255,255,0.02);
+            color: var(--text-muted);
+            font-family: var(--font-head);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            transition: var(--transition);
+        }
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--red-primary);
+            color: #fff;
+            border-color: var(--red-primary);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+        .service-card {
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .service-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .service-body {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        .service-icon {
+            font-size: 1.5rem;
+            color: var(--red-bright);
+            margin-bottom: 12px;
+        }
+        .service-body h3 { font-size: 1.3rem; margin-bottom: 10px; }
+        .service-body p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px; flex-grow: 1; }
+
+        /* VEHICLE CARE & VEHICLE TYPES */
+        .care-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 30px;
+        }
+        .care-card { overflow: hidden; }
+        .care-card img { width: 100%; height: 220px; object-fit: cover; }
+        .care-card-body { padding: 24px; }
+        .care-card-body h3 { margin-bottom: 10px; }
+        .care-card-body p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 16px; }
+        .care-tips {
+            background: rgba(0,0,0,0.3);
+            padding: 12px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            color: var(--silver);
+            border-left: 2px solid var(--red-bright);
+        }
+
+        .vehicle-selector {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        .type-btn {
+            padding: 12px 28px;
+            border-radius: 4px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-card);
+            color: #fff;
+            font-family: var(--font-head);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        .type-btn.active {
+            border-color: var(--red-bright);
+            background: rgba(239, 68, 68, 0.15);
+        }
+        .type-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 32px;
+            text-align: center;
+        }
+
+        /* PROCESS & CHECKLIST */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .process-card {
+            padding: 24px;
+            text-align: center;
+        }
+        .step-num {
+            font-family: var(--font-head);
+            font-size: 2rem;
+            color: var(--red-bright);
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .checklist-container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 32px;
+        }
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 14px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .checklist-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            accent-color: var(--red-primary);
+            cursor: pointer;
+        }
+
+        /* PROBLEM FINDER */
+        .finder-box {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 32px;
+            text-align: center;
+        }
+        .finder-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+            margin: 24px 0;
+        }
+        .finder-btn {
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            background: rgba(255,255,255,0.02);
+            color: #fff;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+        .finder-btn:hover, .finder-btn.active {
+            border-color: var(--red-bright);
+            background: rgba(239,68,68,0.1);
+        }
+        .finder-result {
+            display: none;
+            margin-top: 24px;
+            padding: 20px;
+            background: rgba(0,0,0,0.4);
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            text-align: left;
+        }
+
+        /* GALLERY SECTION */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .gallery-item {
+            height: 240px;
+            overflow: hidden;
+            border-radius: 6px;
+            position: relative;
+            cursor: pointer;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* WHY CHOOSE & AUTOMOTIVE TIPS */
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+        }
+        .why-card { padding: 28px; }
+        .why-card h3 { color: var(--red-bright); margin-bottom: 10px; }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+        .tip-card { overflow: hidden; }
+        .tip-card img { width: 100%; height: 180px; object-fit: cover; }
+        .tip-card-body { padding: 20px; }
+
+        /* FAQ ACCORDION */
+        .faq-accordion {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            margin-bottom: 12px;
+            overflow: hidden;
+        }
+        .faq-header {
+            padding: 20px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-family: var(--font-head);
+            font-size: 1.1rem;
+        }
+        .faq-body {
+            padding: 0 24px 20px 24px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            display: none;
+        }
+        .faq-item.active .faq-body { display: block; }
+        .faq-icon { transition: var(--transition); color: var(--red-bright); }
+        .faq-item.active .faq-icon { transform: rotate(45deg); }
+
+        /* LOCATION & CONTACT */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 40px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            font-family: var(--font-head);
+        }
+        .form-control {
+            width: 100%;
+            padding: 14px 16px;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            color: #fff;
+            font-family: inherit;
+            transition: var(--transition);
+        }
+        .form-control:focus {
+            outline: none;
+            border-color: var(--red-bright);
+        }
+        textarea.form-control { resize: vertical; min-height: 120px; }
+
+        /* MODAL & LIGHTBOX */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0,0,0,0.85);
+            backdrop-filter: blur(10px);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: var(--transition);
+            padding: 20px;
+        }
+        .modal.active { opacity: 1; pointer-events: auto; }
+        .modal-content {
+            max-width: 600px;
+            width: 100%;
+            padding: 32px;
+            position: relative;
+        }
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.5rem;
+            color: var(--text-muted);
+            cursor: pointer;
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 80px 0 30px 0;
+            border-top: 1px solid var(--border-color);
+            background: #07090c;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1.5fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 44px;
+            height: 44px;
+            border-radius: 4px;
+            background: var(--red-primary);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            opacity: 0;
+            pointer-events: none;
+            transition: var(--transition);
+            z-index: 999;
+        }
+        .back-to-top.visible { opacity: 1; pointer-events: auto; }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 992px) {
+            .hero { grid-template-columns: 1fr; padding-top: 14px; text-align: center; }
+            .hero-cta { justify-content: center; }
+            .about-grid { grid-template-columns: 1fr; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .hamburger { display: flex; }
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                height: 100vh;
+                background: var(--bg-dark);
+                flex-direction: column;
+                padding: 100px 40px;
+                transition: var(--transition);
+            }
+            .nav-links.active { right: 0; }
+            .hero-content h1 { font-size: 2.5rem; }
+            .nav-btn { display: none; }
+        }
+
+        /* =====================================================
+           REDESIGN LAYER — softer, modern service look
+           ===================================================== */
+        h1, h2, h3, h4, h5, h6 {
+            text-transform: none;
+            letter-spacing: -0.02em;
+            font-weight: 600;
+        }
+
+        .section-header h2 { font-size: clamp(1.9rem, 3.8vw, 2.7rem); }
+
+        .badge {
+            border-radius: 999px;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            font-size: 0.7rem;
+            padding: 7px 18px;
+        }
+
+        /* Pill buttons, calmer type */
+        .btn {
+            border-radius: 999px;
+            font-family: var(--font-body);
+            font-size: 0.78rem;
+            letter-spacing: 0.09em;
+            padding: 14px 30px;
+        }
+
+        .btn-primary {
+            background: var(--red-bright);
+            color: #08201d;
+            box-shadow: 0 8px 24px var(--red-glow);
+        }
+
+        .btn-primary:hover {
+            background: #4ce3cf;
+            box-shadow: 0 12px 30px rgba(47, 212, 191, 0.32);
+        }
+
+        .btn-outline:hover { border-color: var(--red-bright); color: var(--red-bright); }
+
+        /* Cards: bigger radii, subtle glow on hover */
+        .glass-card {
+            border-radius: 20px;
+        }
+
+        .glass-card:hover {
+            border-color: rgba(47, 212, 191, 0.45);
+            transform: translateY(-4px);
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+        }
+
+        .hero-img { border-radius: 24px; }
+
+        .floating-badge {
+            border-radius: 999px;
+            font-family: var(--font-body);
+            letter-spacing: 0.04em;
+            font-size: 0.8rem;
+        }
+
+        /* Navbar */
+        .navbar { background: rgba(13, 18, 17, 0.78); }
+        .navbar.scrolled { background: rgba(13, 18, 17, 0.95); }
+
+        .logo {
+            letter-spacing: 0.14em;
+            font-size: 1.15rem;
+        }
+
+        .nav-links a {
+            font-family: var(--font-body);
+            font-size: 0.78rem;
+            letter-spacing: 0.07em;
+            font-weight: 600;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(2.3rem, 5vw, 3.6rem);
+            letter-spacing: -0.035em;
+        }
+
+        .form-control:focus {
+            border-color: var(--red-bright);
+            box-shadow: 0 0 0 3px var(--red-glow);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">CARCARE <span>POINT</span></a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#care">Vehicle Care</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#contact" class="btn btn-primary nav-btn">Book a Service</a>
+            <div class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="container hero">
+        <div class="hero-content">
+            <div class="badge">AUTO SERVICE & VEHICLE CARE</div>
+            <h1>Reliable Vehicle Service. <span style="color: var(--red-bright);">Built Around Your Drive.</span></h1>
+            <p>Professional vehicle care and maintenance services designed to help keep your vehicle running smoothly.</p>
+            <div class="hero-cta">
+                <a href="#contact" class="btn btn-primary">Book a Service</a>
+                <a href="tel:+923283971938" class="btn btn-outline">Call Now</a>
+            </div>
+            <div class="hero-meta">
+                <div><strong>SPEEDY SERVICES STATION</strong></div>
+                <div>Location: Karachi, Pakistan</div>
+                <div>Phone: <a href="tel:+923283971938" style="color: var(--red-bright); font-family: var(--font-head);">0328 3971938</a></div>
+            </div>
+        </div>
+        <div class="hero-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1000&q=80" alt="Automotive Service Workshop Mechanic" class="hero-img">
+            <div class="floating-badge fb-1">Vehicle Maintenance</div>
+            <div class="floating-badge fb-2">Professional Care</div>
+        </div>
+    </section>
+
+    <section id="about" style="background: rgba(255,255,255,0.01);">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <div class="badge">ABOUT US</div>
+                    <h2 style="font-size: 2.5rem; margin: 16px 0;">Vehicle Care You Can Rely On</h2>
+                    <p>CarCare Point provides dedicated auto maintenance and repair support tailored to keep your vehicle performing safely and efficiently. Located in Karachi, Pakistan, our workshop handles routine care, general inspections, and detailed servicing.</p>
+                    <p>We prioritize clear communication, straightforward technical assessments, and maintenance work focused strictly on preserving your vehicle's mechanical integrity.</p>
+                    <div class="about-bullets">
+                        <div class="bullet-item"><span>✓</span> Vehicle Servicing</div>
+                        <div class="bullet-item"><span>✓</span> System Maintenance</div>
+                        <div class="bullet-item"><span>✓</span> Routine Inspection</div>
+                        <div class="bullet-item"><span>✓</span> Repair Support</div>
+                        <div class="bullet-item"><span>✓</span> Routine Vehicle Care</div>
+                        <div class="bullet-item"><span>✓</span> Customer-Focused Service</div>
+                    </div>
+                </div>
+                <div>
+                    <img src="https://images.unsplash.com/photo-1486006920555-c77dce18193b?auto=format&fit=crop&w=800&q=80" alt="Mechanic Inspecting Vehicle Engine" style="border-radius: 8px; border: 1px solid var(--border-color);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <div class="section-header">
+                <div class="badge">OUR SERVICES</div>
+                <h2>Service Catalog</h2>
+                <p>Comprehensive vehicle care solutions tailored to keep your car operating safely.</p>
+            </div>
+
+            <div class="filter-buttons">
+                <button class="filter-btn active" onclick="filterServices('all')">All</button>
+                <button class="filter-btn" onclick="filterServices('maintenance')">Maintenance</button>
+                <button class="filter-btn" onclick="filterServices('engine')">Engine</button>
+                <button class="filter-btn" onclick="filterServices('brakes')">Brakes</button>
+                <button class="filter-btn" onclick="filterServices('electrical')">Electrical</button>
+                <button class="filter-btn" onclick="filterServices('ac')">AC</button>
+                <button class="filter-btn" onclick="filterServices('tires')">Tires</button>
+                <button class="filter-btn" onclick="filterServices('cleaning')">Cleaning</button>
+            </div>
+
+            <div class="services-grid" id="services-grid">
+                </div>
+        </div>
+    </section>
+
+    <section id="care" style="background: rgba(0,0,0,0.2);">
+        <div class="container">
+            <div class="section-header">
+                <div class="badge">GUIDANCE</div>
+                <h2>Take Better Care of Your Vehicle</h2>
+                <p>Essential maintenance insights for long-term vehicle performance.</p>
+            </div>
+            <div class="care-grid">
+                <div class="glass-card care-card">
+                    <img src="https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?auto=format&fit=crop&w=600&q=80" alt="Engine Care">
+                    <div class="care-card-body">
+                        <h3>Engine Care</h3>
+                        <p>Consistent oil changes and fluid checks prevent severe engine friction and overheating.</p>
+                        <div class="care-tips">Tip: Check oil dipstick levels once every month.</div>
+                    </div>
+                </div>
+                <div class="glass-card care-card">
+                    <img src="https://media.istockphoto.com/id/1364951743/photo/checking-the-brake-discs-of-a-modern-car-vehicle-braking-system.webp?a=1&b=1&s=612x612&w=0&k=20&c=Sx0-tzwyrEEIoaWfBwkS_XbkP-ew8ffo81xpKG7kdQs=" alt="Brake Maintenance">
+                    <div class="care-card-body">
+                        <h3>Brake Care</h3>
+                        <p>Routine pad inspections ensure immediate stopping response and rotor longevity.</p>
+                        <div class="care-tips">Tip: Listen for squeaking noises when applying brakes.</div>
+                    </div>
+                </div>
+                <div class="glass-card care-card">
+                    <img src="https://images.unsplash.com/photo-1578844251758-2f71da64c96f?auto=format&fit=crop&w=600&q=80" alt="Tire Care">
+                    <div class="care-card-body">
+                        <h3>Tire Care</h3>
+                        <p>Maintaining proper tire pressure guarantees uniform tread wear and optimized fuel consumption.</p>
+                        <div class="care-tips">Tip: Inspect tread depth before long highway trips.</div>
+                    </div>
+                </div>
+                <div class="glass-card care-card">
+                    <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=600&q=80" alt="Battery Care">
+                    <div class="care-card-body">
+                        <h3>Battery Care</h3>
+                        <p>Keeping terminal points clear of corrosion protects overall electrical starting reliability.</p>
+                        <div class="care-tips">Tip: Ensure hold-down clamps keep the battery secure.</div>
+                    </div>
+                </div>
+                <div class="glass-card care-card">
+                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=600&q=80" alt="AC Care">
+                    <div class="care-card-body">
+                        <h3>AC Care</h3>
+                        <p>Seasonal cabin filter swaps and refrigerant pressure checks preserve optimal cooling performance.</p>
+                        <div class="care-tips">Tip: Run cabin AC periodically during winter months.</div>
+                    </div>
+                </div>
+                <div class="glass-card care-card">
+                    <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=600&q=80" alt="Oil Filter Maintenance">
+                    <div class="care-card-body">
+                        <h3>Oil & Filter Care</h3>
+                        <p>Replacing clogged filters prevents abrasive debris from circulating within vital engine paths.</p>
+                        <div class="care-tips">Tip: Always replace the filter alongside every oil service.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <div class="badge">CATEGORY ASSISTANCE</div>
+                <h2>Services by Vehicle Category</h2>
+            </div>
+            <div class="vehicle-selector">
+                <button class="type-btn active" onclick="selectType('cars')">Cars</button>
+                <button class="type-btn" onclick="selectType('suvs')">SUVs</button>
+                <button class="type-btn" onclick="selectType('vans')">Vans</button>
+                <button class="type-btn" onclick="selectType('other')">Other Vehicles</button>
+            </div>
+            <div class="glass-card type-content" id="type-display">
+                </div>
+        </div>
+    </section>
+
+    <section style="background: rgba(255,255,255,0.01);">
+        <div class="container">
+            <div class="section-header">
+                <div class="badge">WORKFLOW</div>
+                <h2>Service Process</h2>
+            </div>
+            <div class="process-steps">
+                <div class="glass-card process-card">
+                    <div class="step-num">01</div>
+                    <h3>Contact</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Get in touch with CarCare Point to outline your needs.</p>
+                </div>
+                <div class="glass-card process-card">
+                    <div class="step-num">02</div>
+                    <h3>Vehicle Check</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Bring your vehicle in for initial physical inspection.</p>
+                </div>
+                <div class="glass-card process-card">
+                    <div class="step-num">03</div>
+                    <h3>Service Plan</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Identify required service requirements clearly before starting.</p>
+                </div>
+                <div class="glass-card process-card">
+                    <div class="step-num">04</div>
+                    <h3>Service</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Carry out necessary servicing and maintenance procedures.</p>
+                </div>
+                <div class="glass-card process-card">
+                    <div class="step-num">05</div>
+                    <h3>Completion</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Review completed vehicle service details together.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 40px;">
+            <div>
+                <div class="badge">INTERACTIVE TOOL</div>
+                <h2 style="font-size: 1.8rem; margin: 12px 0;">Maintenance Checklist</h2>
+                <div class="glass-card checklist-container">
+                    <div id="checklist-items">
+                        </div>
+                    <button class="btn btn-outline" style="margin-top: 20px; width: 100%;" onclick="resetChecklist()">Reset Checklist</button>
+                </div>
+            </div>
+
+            <div>
+                <div class="badge">HELP FINDER</div>
+                <h2 style="font-size: 1.8rem; margin: 12px 0;">Vehicle Problem Finder</h2>
+                <div class="glass-card finder-box">
+                    <p style="color: var(--text-muted);">Select what issue you are experiencing:</p>
+                    <div class="finder-options">
+                        <button class="finder-btn" onclick="findIssue('Engine issue')">Engine Issue</button>
+                        <button class="finder-btn" onclick="findIssue('Brake issue')">Brake Issue</button>
+                        <button class="finder-btn" onclick="findIssue('AC issue')">AC Issue</button>
+                        <button class="finder-btn" onclick="findIssue('Battery issue')">Battery Issue</button>
+                        <button class="finder-btn" onclick="findIssue('Tire issue')">Tire Issue</button>
+                        <button class="finder-btn" onclick="findIssue('Electrical issue')">Electrical Issue</button>
+                        <button class="finder-btn" onclick="findIssue('General maintenance')">Maintenance</button>
+                        <button class="finder-btn" onclick="findIssue('Not sure')">Not Sure</button>
+                    </div>
+                    <div class="finder-result" id="finder-result">
+                        <h4 id="finder-title" style="color: var(--red-bright); margin-bottom: 8px;"></h4>
+                        <p id="finder-desc" style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 12px;"></p>
+                        <a href="#contact" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.8rem;">Contact Station</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" style="background: rgba(0,0,0,0.3);">
+        <div class="container">
+            <div class="section-header">
+                <div class="badge">WORKSHOP GALLERY</div>
+                <h2>Our Service Environment</h2>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?auto=format&fit=crop&w=600&q=80" alt="Workshop Tooling"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=600&q=80" alt="Engine Servicing Bay"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=600&q=80" alt="Vehicle Wheel Inspection"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=600&q=80" alt="Car Exterior Care"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1613214149922-f1809c99b414?auto=format&fit=crop&w=600&q=80" alt="Brake Assembly Work"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1508974239320-0a029497e820?auto=format&fit=crop&w=600&q=80" alt="Diagnostic Work"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=600&q=80" alt="Vehicle Front Inspection"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&w=600&q=80" alt="Auto Wash Bay"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=600&q=80" alt="Car Maintenance Check"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=600&q=80" alt="Mechanic Bay"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=600&q=80" alt="Suspension Check"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1517026575980-3e1e2dedeab4?auto=format&fit=crop&w=600&q=80" alt="Vehicle Detailing"></div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <div class="badge">WHY CHOOSE US</div>
+                <h2>Service Commitment</h2>
+            </div>
+            <div class="why-grid" style="margin-bottom: 80px;">
+                <div class="glass-card why-card">
+                    <h3>Professional Vehicle Care</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">Focusing on standard operational checks and careful execution of service tasks.</p>
+                </div>
+                <div class="glass-card why-card">
+                    <h3>Service-Focused Approach</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">Prioritizing essential maintenance that directly impacts your drive quality and safety.</p>
+                </div>
+                <div class="glass-card why-card">
+                    <h3>Clear Communication</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">Providing straightforward explanations regarding necessary vehicle service steps.</p>
+                </div>
+                <div class="glass-card why-card">
+                    <h3>Maintenance Support</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">Offering structured guidance to help extend vehicle component lifespans.</p>
+                </div>
+                <div class="glass-card why-card">
+                    <h3>Modern Presentation</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">Clean facility atmosphere combined with professional handling of customer vehicles.</p>
+                </div>
+                <div class="glass-card why-card">
+                    <h3>Convenient Contact</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">Direct access via telephone to ask questions and schedule service visits.</p>
+                </div>
+            </div>
+
+            <div class="section-header">
+                <div class="badge">AUTOMOTIVE TIPS</div>
+                <h2>Vehicle Care Knowledge</h2>
+            </div>
+            <div class="tips-grid">
+                <div class="glass-card tip-card">
+                    <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=500&q=80" alt="Engine Oil Check">
+                    <div class="tip-card-body">
+                        <h4>Check Engine Oil Regularly</h4>
+                        <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 6px;">Check fluid levels when the engine is cold to maintain safe lubrication.</p>
+                    </div>
+                </div>
+                <div class="glass-card tip-card">
+                    <img src="https://images.unsplash.com/photo-1578844251758-2f71da64c96f?auto=format&fit=crop&w=500&q=80" alt="Tire Inspection">
+                    <div class="tip-card-body">
+                        <h4>Monitor Tire Condition</h4>
+                        <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 6px;">Regularly check air pressure and watch out for uneven tread wear.</p>
+                    </div>
+                </div>
+                <div class="glass-card tip-card">
+                    <img src="https://images.unsplash.com/photo-1600706432520-256f62ecd3ed?auto=format&fit=crop&w=500&q=80" alt="Brake Performance">
+                    <div class="tip-card-body">
+                        <h4>Pay Attention to Brakes</h4>
+                        <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 6px;">Unusual vibrations or soft pedal feedback require early pad checks.</p>
+                    </div>
+                </div>
+                <div class="glass-card tip-card">
+                    <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=500&q=80" alt="Battery Cleanliness">
+                    <div class="tip-card-body">
+                        <h4>Keep Battery Clean</h4>
+                        <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 6px;">Prevent corrosion buildup around battery posts to preserve electrical connection.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" style="background: rgba(0,0,0,0.2);">
+        <div class="container">
+            <div class="section-header">
+                <div class="badge">QUESTIONS</div>
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-accordion">
+                <div class="glass-card faq-item">
+                    <div class="faq-header" onclick="toggleFaq(this)">
+                        <span>What services does CarCare Point provide?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-body">We handle general vehicle servicing, engine maintenance, oil and filter replacement, brake maintenance, battery checks, vehicle AC maintenance, tire inspections, car washing, and basic electrical checks.</div>
+                </div>
+                <div class="glass-card faq-item">
+                    <div class="faq-header" onclick="toggleFaq(this)">
+                        <span>How can I contact CarCare Point?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-body">You can contact us directly by phone at 0328 3971938 or submit a service request through our website form.</div>
+                </div>
+                <div class="glass-card faq-item">
+                    <div class="faq-header" onclick="toggleFaq(this)">
+                        <span>Where is CarCare Point located?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-body">Our workshop is located in Karachi, Pakistan. Call or WhatsApp us at 0328 3971938 for directions and timings.</div>
+                </div>
+                <div class="glass-card faq-item">
+                    <div class="faq-header" onclick="toggleFaq(this)">
+                        <span>Can I call to discuss my vehicle service requirement?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-body">Yes, you are welcome to call us prior to bringing your vehicle so we can understand your specific servicing needs.</div>
+                </div>
+                <div class="glass-card faq-item">
+                    <div class="faq-header" onclick="toggleFaq(this)">
+                        <span>What should I check before bringing my vehicle for service?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-body">Note any specific sounds, warning lights, or operational symptoms you've noticed so you can inform our team during check-in.</div>
+                </div>
+                <div class="glass-card faq-item">
+                    <div class="faq-header" onclick="toggleFaq(this)">
+                        <span>Do you provide general vehicle maintenance?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-body">Yes, routine general maintenance is a core focus of our service offerings.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div>
+                    <div class="badge">VISIT US</div>
+                    <h2 style="font-size: 2.2rem; margin: 12px 0;">Visit CarCare Point</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 24px;">Located conveniently in Karachi, Pakistan to support your vehicle's maintenance requirements.</p>
+
+                    <div style="margin-bottom: 24px;">
+                        <h4 style="color: var(--red-bright);">Location</h4>
+                        <p style="color: var(--text-muted);">Karachi, Pakistan</p>
+                    </div>
+
+                    <div style="margin-bottom: 24px;">
+                        <h4 style="color: var(--red-bright);">Phone</h4>
+                        <p><a href="tel:+923283971938" style="font-family: var(--font-head); font-size: 1.2rem; color: #fff;">0328 3971938</a></p>
+                    </div>
+
+                    <div style="margin-bottom: 24px;">
+                        <h4 style="color: var(--red-bright);">WhatsApp</h4>
+                        <p><a href="https://wa.me/923283971938" target="_blank" rel="noopener" style="font-family: var(--font-head); font-size: 1.2rem; color: #fff;">+92 328 3971938</a></p>
+                    </div>
+
+                    <div style="margin-bottom: 24px;">
+                        <h4 style="color: var(--red-bright);">Email</h4>
+                        <p><a href="mailto:carcarepoint@gmail.com" style="color: #fff;">carcarepoint@gmail.com</a></p>
+                    </div>
+
+                    <div style="display: flex; gap: 12px; margin-bottom: 30px; flex-wrap: wrap;">
+                        <a href="tel:+923283971938" class="btn btn-primary">Call Now</a>
+                        <a href="https://wa.me/923283971938" target="_blank" rel="noopener" class="btn btn-outline">WhatsApp Us</a>
+                    </div>
+
+                    <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=600&q=80" alt="Workshop Location" style="border-radius: 6px; border: 1px solid var(--border-color);">
+                </div>
+
+                <div class="glass-card" style="padding: 32px;">
+                    <h3 style="margin-bottom: 8px;">Need Vehicle Service?</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 24px;">Contact CarCare Point to discuss your vehicle's service requirements.</p>
+
+                    <form id="contact-form" onsubmit="handleContactSubmit(event)">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" id="form-name" class="form-control" required placeholder="Your Name">
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="tel" id="form-phone" class="form-control" required placeholder="03XXXXXXXXX">
+                        </div>
+                        <div class="form-group">
+                            <label>Vehicle Type</label>
+                            <select id="form-type" class="form-control">
+                                <option value="Car">Car</option>
+                                <option value="SUV">SUV</option>
+                                <option value="Van">Van</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Service Required</label>
+                            <select id="form-service" class="form-control">
+                                <option value="General Service">General Service</option>
+                                <option value="Engine">Engine Service</option>
+                                <option value="Brakes">Brake Service</option>
+                                <option value="Battery">Battery Service</option>
+                                <option value="AC">AC Service</option>
+                                <option value="Tires">Tire Service</option>
+                                <option value="Electrical">Electrical Service</option>
+                                <option value="Cleaning">Car Wash / Cleaning</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Message</label>
+                            <textarea id="form-message" class="form-control" placeholder="Describe what your vehicle needs..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Service Request</button>
+                    </form>
+                    <div id="form-success" style="display: none; margin-top: 20px; padding: 16px; background: rgba(239, 68, 68, 0.1); border: 1px solid var(--red-bright); border-radius: 4px; text-align: center;">
+                        <p style="color: #fff; font-size: 0.95rem; margin-bottom: 12px;">Thank you! Your request has been recorded. Please feel free to call us directly for immediate assistance.</p>
+                        <a href="tel:+923283971938" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.85rem;">Call Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="padding: 60px 0;">
+        <div class="container">
+            <div class="glass-card" style="padding: 50px; text-align: center; background: linear-gradient(135deg, rgba(18,22,31,0.9), rgba(239,68,68,0.1)); border-color: rgba(239,68,68,0.3);">
+                <h2 style="font-size: 2.2rem; margin-bottom: 12px;">Keep Your Vehicle Ready For The Road.</h2>
+                <p style="color: var(--text-muted); margin-bottom: 24px;">Contact CarCare Point for your vehicle service and maintenance requirements.</p>
+                <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                    <a href="#contact" class="btn btn-primary">Book a Service</a>
+                    <a href="tel:+923283971938" class="btn btn-outline">Call Now</a>
+                </div>
+                <p style="margin-top: 16px; font-family: var(--font-head); font-size: 0.9rem; color: var(--text-dim);">Phone: 0328 3971938</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <a href="#" class="logo" style="margin-bottom: 12px;">CARCARE <span>POINT</span></a>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; max-width: 300px;">Auto Service & Vehicle Care station dedicated to reliable maintenance and inspection in Karachi.</p>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 16px;">Quick Links</h4>
+                    <div style="display: flex; flex-direction: column; gap: 8px; font-size: 0.9rem; color: var(--text-muted);">
+                        <a href="#home">Home</a>
+                        <a href="#about">About</a>
+                        <a href="#services">Services</a>
+                        <a href="#care">Vehicle Care</a>
+                        <a href="#gallery">Gallery</a>
+                        <a href="#faq">FAQ</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 16px;">Contact Us</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 8px;"><b>Location:</b> Karachi, Pakistan</p>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Phone: <a href="tel:+923283971938" style="color: var(--red-bright);">0328 3971938</a></p>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">WhatsApp: <a href="https://wa.me/923283971938" target="_blank" rel="noopener" style="color: var(--red-bright);">+92 328 3971938</a></p>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Email: <a href="mailto:carcarepoint@gmail.com" style="color: var(--red-bright);">carcarepoint@gmail.com</a></p>
+
+                </div>
+            </div>
+            <div style="text-align: center; font-size: 0.8rem; color: var(--text-dim); border-top: 1px solid var(--border-color); padding-top: 20px;">
+                © CarCare Point. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top" id="backToTop">&uarr;</a>
+
+    <div class="modal" id="service-modal">
+        <div class="glass-card modal-content">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <script>
+        // SERVICES DATA
+        const servicesData = [
+            { id: 1, category: 'maintenance', icon: '🔧', title: 'General Vehicle Service', img: 'https://images.unsplash.com/photo-1727893304219-063d142ce6f3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fEdlbmVyYWwlMjBWZWhpY2xlJTIwU2VydmljZXxlbnwwfHwwfHx8MA%3D%3D', desc: 'Routine vehicle servicing and maintenance support designed for overall drive condition.', full: 'General vehicle servicing includes checking overall vehicle operating systems, topping off essential fluid levels, inspecting filters, and addressing basic mechanical wear.' },
+            { id: 2, category: 'engine', icon: '⚙️', title: 'Engine Service', img: 'https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?auto=format&fit=crop&w=600&q=80', desc: 'General engine inspection and servicing to maintain smooth running performance.', full: 'Engine servicing involves spark plug inspection, manifold checks, belt tension reviews, and essential component cleanups.' },
+            { id: 3, category: 'maintenance', icon: '🛢️', title: 'Oil & Filter Service', img: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=600&q=80', desc: 'Oil and filter replacement service targeting engine lubrication health.', full: 'Draining used engine oil, replacing clogged oil filters, and refilling with clean motor oil suitable for your engine specifications.' },
+            { id: 4, category: 'brakes', icon: '🛑', title: 'Brake Service', img: 'https://images.unsplash.com/photo-1656232976683-7b688560e427?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8QnJha2UlMjBTZXJ2aWNlfGVufDB8fDB8fHww', desc: 'Brake pad inspection, fluid checks, and general brake system maintenance.', full: 'Thorough physical evaluation of brake pads, disc rotors, brake lines, and fluid levels to maintain responsive stopping ability.' },
+            { id: 5, category: 'electrical', icon: '🔋', title: 'Battery Service', img: 'https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=600&q=80', desc: 'Battery condition inspection, terminal cleaning, and replacement support.', full: 'Checking battery terminal voltage, cleaning corrosion from connector clamps, and securing battery hold-downs.' },
+            { id: 6, category: 'ac', icon: '❄️', title: 'AC Service', img: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=600&q=80', desc: 'Vehicle air-conditioning system inspection and cooling performance checks.', full: 'Cabin filter cleaning/replacement, cooling coil inspection, and refrigerant pressure evaluation for comfortable vehicle cooling.' },
+            { id: 7, category: 'tires', icon: '🛞', title: 'Tire Service', img: 'https://images.unsplash.com/photo-1578844251758-2f71da64c96f?auto=format&fit=crop&w=600&q=80', desc: 'Tire pressure adjustments, tread condition checks, and maintenance support.', full: 'Inspecting tire tread depth, assessing wear patterns, setting accurate tire pressure, and verifying spare tire condition.' },
+            { id: 8, category: 'tires', icon: '📐', title: 'Wheel Alignment', img: 'https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=600&q=80', desc: 'Wheel alignment inspection and adjustment support for straight tracking.', full: 'Evaluating wheel angles to prevent off-center steering pulls and reduce premature tire tread wear.' },
+            { id: 9, category: 'maintenance', icon: '🔩', title: 'Suspension Service', img: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=600&q=80', desc: 'Suspension component inspection and joint condition checks.', full: 'Inspecting shock absorbers, bushings, linkage joints, and struts to support stable ride dynamics.' },
+            { id: 10, category: 'cleaning', icon: '🧼', title: 'Car Wash & Cleaning', img: 'https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&w=600&q=80', desc: 'Vehicle exterior body washing and interior surface cleaning care.', full: 'Exterior surface washing, wheel cleaning, windshield wiping, and cabin interior vacuuming.' },
+            { id: 11, category: 'electrical', icon: '⚡', title: 'Electrical Service', img: 'https://images.unsplash.com/photo-1508974239320-0a029497e820?auto=format&fit=crop&w=600&q=80', desc: 'General vehicle electrical wiring, fuse, and light inspection support.', full: 'Checking exterior vehicle lighting, fuse connectivity, indicator signals, and minor wiring connections.' },
+            { id: 12, category: 'maintenance', icon: '📋', title: 'Vehicle Inspection', img: 'https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=600&q=80', desc: 'Comprehensive multi-point vehicle health condition inspection.', full: 'Detailed point-by-point visual check of engine bay components, fluids, underside linkages, and safety lights.' }
+        ];
+
+        // RENDER SERVICES
+        function renderServices(items) {
+            const grid = document.getElementById('services-grid');
+            grid.innerHTML = '';
+            items.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'glass-card service-card';
+                card.innerHTML = `
+                    <img src="${item.img}" alt="${item.title}" class="service-img" loading="lazy">
+                    <div class="service-body">
+                        <div class="service-icon">${item.icon}</div>
+                        <h3>${item.title}</h3>
+                        <p>${item.desc}</p>
+                        <button class="btn btn-outline" style="width:100%; font-size: 0.8rem;" onclick="openServiceModal(${item.id})">Learn More</button>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function filterServices(category) {
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            if(category === 'all') {
+                renderServices(servicesData);
+            } else {
+                renderServices(servicesData.filter(s => s.category === category));
+            }
+        }
+
+        function openServiceModal(id) {
+            const service = servicesData.find(s => s.id === id);
+            if(!service) return;
+            const modalBody = document.getElementById('modal-body');
+            modalBody.innerHTML = `
+                <div class="badge">${service.category.toUpperCase()}</div>
+                <h2 style="font-size: 1.8rem; margin: 12px 0;">${service.title}</h2>
+                <img src="${service.img}" alt="${service.title}" style="width:100%; height:200px; object-fit:cover; border-radius:6px; margin-bottom:16px;">
+                <p style="color: var(--text-muted); font-size:0.95rem; line-height:1.6; margin-bottom:20px;">${service.full}</p>
+                <a href="#contact" class="btn btn-primary" onclick="closeModal()">Book This Service</a>
+            `;
+            document.getElementById('service-modal').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('service-modal').classList.remove('active');
+        }
+
+        // VEHICLE SELECTOR
+        const typeInfo = {
+            cars: "For passenger cars, regular oil changes, brake checks, and tire pressure adjustments maintain optimal daily commuting efficiency.",
+            suvs: "For SUVs, suspension bushing reviews, brake pad inspections, and robust tire tread checks support safe handling across heavier loads.",
+            vans: "For commercial or family vans, cooling system checks, battery capacity testing, and brake servicing ensure reliable high-mileage transport.",
+            other: "For other vehicle types, general multi-point inspections help identify specific mechanical care requirements tailored to your drive."
+        };
+
+        function selectType(type) {
+            document.querySelectorAll('.type-btn').forEach(b => b.classList.remove('active'));
+            event.target.classList.add('active');
+            document.getElementById('type-display').innerHTML = `<p style="color: var(--text-muted); font-size: 1.05rem;">${typeInfo[type]}</p>`;
+        }
+
+        // CHECKLIST & LOCALSTORAGE
+        const checklistData = [
+            "Check engine oil", "Check brake condition", "Check tire condition", 
+            "Check battery", "Check coolant", "Check lights", 
+            "Check windshield/wipers", "Check AC performance"
+        ];
+
+        function renderChecklist() {
+            const container = document.getElementById('checklist-items');
+            const savedState = JSON.parse(localStorage.getItem('speedy_checklist') || '{}');
+            container.innerHTML = '';
+            checklistData.forEach((item, index) => {
+                const isChecked = savedState[index] ? 'checked' : '';
+                const div = document.createElement('div');
+                div.className = 'checklist-item';
+                div.innerHTML = `
+                    <input type="checkbox" id="chk-${index}" ${isChecked} onchange="toggleChecklist(${index})">
+                    <label for="chk-${index}" style="cursor:pointer; font-size:0.95rem;">${item}</label>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        function toggleChecklist(index) {
+            const savedState = JSON.parse(localStorage.getItem('speedy_checklist') || '{}');
+            savedState[index] = !savedState[index];
+            localStorage.setItem('speedy_checklist', JSON.stringify(savedState));
+        }
+
+        function resetChecklist() {
+            localStorage.removeItem('speedy_checklist');
+            renderChecklist();
+        }
+
+        // PROBLEM FINDER
+        const issuesData = {
+            'Engine issue': { title: 'Engine Service Category', desc: 'Possible signs include rough idling, reduced power, or fluid leaks. A physical engine inspection is recommended.' },
+            'Brake issue': { title: 'Brake Service Category', desc: 'Squeaking, grinding, or soft pedal response indicates your brake pads or fluid need inspection.' },
+            'AC issue': { title: 'AC Service Category', desc: 'Inadequate cooling or weak air pressure points toward cabin filter restriction or AC system needs.' },
+            'Battery issue': { title: 'Battery Service Category', desc: 'Slow starting or dim indicator lights suggest battery testing or terminal cleaning.' },
+            'Tire issue': { title: 'Tire Service Category', desc: 'Uneven wear or persistent low pressure requires tread inspection and wheel alignment checks.' },
+            'Electrical issue': { title: 'Electrical Service Category', desc: 'Flickering indicators or headlight issues point toward fuse or connection checks.' },
+            'General maintenance': { title: 'General Service Category', desc: 'Routine fluids, filter checks, and multi-point vehicle maintenance.' },
+            'Not sure': { title: 'General Vehicle Inspection', desc: 'Bring your vehicle for an initial multi-point check to evaluate general system condition.' }
+        };
+
+        function findIssue(key) {
+            document.querySelectorAll('.finder-btn').forEach(b => b.classList.remove('active'));
+            event.target.classList.add('active');
+            const res = issuesData[key];
+            document.getElementById('finder-title').innerText = res.title;
+            document.getElementById('finder-desc').innerText = res.desc;
+            document.getElementById('finder-result').style.display = 'block';
+        }
+
+        // FAQ ACCORDION
+        function toggleFaq(header) {
+            const item = header.parentElement;
+            item.classList.toggle('active');
+        }
+
+        // FORM SUBMISSION
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            document.getElementById('contact-form').style.display = 'none';
+            document.getElementById('form-success').style.display = 'block';
+        }
+
+        // NAVBAR & SCROLL
+        const navbar = document.getElementById('navbar');
+        const backToTop = document.getElementById('backToTop');
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) navbar.classList.add('scrolled');
+            else navbar.classList.remove('scrolled');
+
+            if (window.scrollY > 300) backToTop.classList.add('visible');
+            else backToTop.classList.remove('visible');
+        });
+
+        hamburger.addEventListener('click', () => navLinks.classList.toggle('active'));
+        document.querySelectorAll('.nav-links a').forEach(l => l.addEventListener('click', () => navLinks.classList.remove('active')));
+
+        // INITIALIZATION
+        document.addEventListener('DOMContentLoaded', () => {
+            renderServices(servicesData);
+            selectType('cars');
+            renderChecklist();
+        });
+    </script>
+</body>
+</html>
